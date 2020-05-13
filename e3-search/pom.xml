@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>e3-parent</artifactId>
+        <groupId>com.e3-mall</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../e3-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>e3-search</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>e3-search-interface</module>
+        <module>e3-search-service</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.e3-mall</groupId>
+            <artifactId>e3-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    <!-- 配置tomcat插件 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <path>/</path>
+                    <port>8084</port>
+                    <url>http://192.168.41.131:8080/manager/text</url>
+                    <username>tomcat</username>
+                    <password>tomcat</password>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
